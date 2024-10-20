@@ -241,7 +241,7 @@ void newtile()
         if (!checkvalid(pos))
         {
             gameover = true;
-            std::cout << "游戏结束！您的得分是：" << score << std::endl;
+            std::cout << "Game over!Your score is:" << score << std::endl;
             return;
         }
     }
@@ -402,7 +402,7 @@ void clearFullRows()
     score += linesCleared * 100;
     if (linesCleared > 0)
     {
-        std::cout << "当前得分：" << score << std::endl;
+        std::cout << "Score:" << score << std::endl;
     }
 
     // 根据得分调整下落速度（简单模式）
@@ -721,7 +721,7 @@ void init()
 int main(int argc, char **argv)
 {
     // 提示用户选择难度
-    std::cout << "请选择游戏难度（1：简单，2：困难）：";
+    std::cout << "choose difficult:1 for ez ,2 for difficult: "<<std::endl;
     std::cin >> difficulty;
 
     if (difficulty == 1) {
@@ -739,7 +739,7 @@ int main(int argc, char **argv)
         ysize = 900;          // 增加窗口高度
         fallInterval = 0.55;   // 加快下落速度
     } else {
-        std::cout << "无效的选择，默认设置为简单难度。" << std::endl;
+        std::cout << "invalid choice" << std::endl;
         // 默认简单难度
         board_width = 10;
         board_height = 20;
